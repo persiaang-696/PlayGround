@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover, user-scalable=no" />
+  <meta name="theme-color" content="#070b18" />
+  <title>ORBITAL — Arena de supervivencia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="game-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Orbital"><span class="brand-mark">✳</span> ORBITAL<span class="brand-dot">.</span></a>
+      <div class="round-label"><span class="live-dot"></span><span id="roundLabel">ARENA 01</span></div>
+      <button class="icon-button" id="soundButton" aria-label="Activar o desactivar sonido" title="Sonido">♫</button>
+    </header>
+
+    <section class="intro-row">
+      <div>
+        <p class="eyebrow">ÚLTIMO PILOTO EN PIE</p>
+        <h1>Rebota. <span>Resiste.</span></h1>
+      </div>
+      <button class="pause-button" id="pauseButton" aria-label="Pausar partida" title="Pausar"><span class="pause-icon">Ⅱ</span></button>
+    </section>
+
+    <section class="arena-wrap" aria-label="Arena 3D de juego">
+      <div class="arena-topline"><span><i class="tiny-star">✦</i> COMBATE ACTIVO</span><span id="speedLabel">VELOCIDAD 1.0×</span></div>
+      <div id="arena" class="arena">
+        <div class="loading">PREPARANDO ARENA<span>...</span></div>
+        <div class="arena-vignette"></div>
+        <div class="rival-status rival-top" id="topStatus"><i></i><span>NOVA</span><b id="topLives">10</b></div>
+        <div class="rival-status rival-left" id="leftStatus"><i></i><span>KAI</span><b id="leftLives">10</b></div>
+        <div class="rival-status rival-right" id="rightStatus"><i></i><span>VEX</span><b id="rightLives">10</b></div>
+        <div id="toast" class="toast" aria-live="polite"></div>
+      </div>
+      <div class="arena-footline"><span>CAMPO DE FUERZA <b>●</b></span><span id="scoreLabel">SUPERVIVENCIA <b>00:00</b></span></div>
+      <div class="player-readout"><span class="player-avatar">✦</span><div><strong>TÚ <em>· PILOTO</em></strong><small>CONTROLAS EL NÚCLEO AZUL</small></div><div class="life-count" id="playerLives">10 <span>♥</span></div></div>
+    </section>
+
+    <section class="controls" aria-label="Controles táctiles">
+      <div class="control-copy"><span class="control-kicker">CONTROLES</span><span class="control-hint">Desliza para moverte</span></div>
+      <div class="move-control" id="moveControl" role="slider" aria-label="Mover nave de izquierda a derecha" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tabindex="0">
+        <button class="move-arrow" id="leftButton" aria-label="Mover a la izquierda">‹</button>
+        <div class="track"><div class="track-center"></div><div class="control-knob" id="controlKnob"><span>✦</span></div></div>
+        <button class="move-arrow" id="rightButton" aria-label="Mover a la derecha">›</button>
+      </div>
+    </section>
+
+    <footer class="footer"><span>© ORBITAL ARENA</span><span>4 PILOTOS <b>·</b> 1 VENCEDOR</span></footer>
+
+    <div class="modal" id="gameModal">
+      <div class="modal-card">
+        <div class="modal-symbol" id="modalSymbol">✳</div>
+        <p class="eyebrow" id="modalEyebrow">ARENA DE SUPERVIVENCIA</p>
+        <h2 id="modalTitle">¿Listo para <span>el impacto?</span></h2>
+        <p class="modal-text" id="modalText">Cuida tu lado, intercepta el núcleo y sobrevive a los otros tres pilotos. Solo tienes 10 vidas.</p>
+        <div class="howto"><span>01 <b>MUÉVETE</b><small>Desliza el control</small></span><span>02 <b>REBOTA</b><small>Intercepta el núcleo</small></span><span>03 <b>SOBREVIVE</b><small>Sé el último en pie</small></span></div>
+        <button class="primary-button" id="playButton">ENTRAR A LA ARENA <span>↗</span></button>
+        <div class="modal-tip">TAMBIÉN PUEDES USAR ← → O A / D</div>
+      </div>
+    </div>
+  </main>
+  <script type="module" src="game.js"></script>
+</body>
+</html>

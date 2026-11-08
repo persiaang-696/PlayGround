@@ -16,3 +16,17 @@
 - 👤 [Explore the creator's projects](https://go.ondev.store/persiaang-696).
 - 🌍 [Create with OMGithub](https://go.ondev.store/).
 <!-- omgithub:readme:end -->
+
+## ORBITAL — Arena de supervivencia
+
+Juego 3D para móvil y escritorio construido con Three.js. Sobrevive junto a tres rivales: desliza el control para mover tu nave, rebota el núcleo hacia otros lados y evita quedarte sin vidas.
+
+### Ejecutar localmente
+
+Necesitas conexión a internet para cargar Three.js desde CDN. Desde la carpeta del proyecto, inicia un servidor estático:
+
+```bash
+python3 -m http.server 3002
+```
+
+Luego abre [http://localhost:3002](http://localhost:3002). También puedes usar las flechas o **A/D** para moverte; **P/Esc** pausa la partida.
